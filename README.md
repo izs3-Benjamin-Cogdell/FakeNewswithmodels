@@ -1,4 +1,15 @@
+## Project Contributions
 
+We have developed 3 models for detecting fake news and evaluated their performance. Each model was a pre-trained BERT model from Hugging Face that was fine-tuned using either the politifact dataset, gossipcop dataset, or both. 
+
+Prior Research Cited by our Study: https://www.sciencedirect.com/science/article/abs/pii/S0306457323003011
+- This study proposes a multimodal model for fake news detection that learns the context features of news and then fuses this with global semantic features to better distinguish fake news.
+
+Contemporary Work Citing our Study: https://www.mdpi.com/2073-431X/13/11/292
+- This paper compares the performance of their proposed LLaMA 3 model in detecting fake claims on bilingual datasets with other large language models.
+
+## Running Our Models
+- TODO
 
 ## FakeNewsNet
 
