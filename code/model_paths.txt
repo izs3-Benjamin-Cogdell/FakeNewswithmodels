@@ -1,3 +1,5 @@
 politifact, results/politifact/politifact_model/
 gossipcop, results/gossipcop/gossipcop_model/
-combined, results/combined/combined_model/
+GossipCop_PolitiFact, results/combined/combined_model/
+Liar, results/liar_dataset/liar_dataset_model
+AllThreeCombined, results/all_three/all_three_model
