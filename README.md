@@ -3,6 +3,8 @@
 
 We have developed 5 models for detecting fake news and evaluated their performance. Each model was a pre-trained BERT model from Hugging Face that was fine-tuned using either the politifact dataset, gossipcop dataset, LIAR dataset, a combination of politifact and gossipcop data, or a combination of all three. 
 
+Inside the /code folder we added evaluation.py, models.ipynb, app.py, inference.py, model_paths.txt, and the results folder. For the /data folder, everything was our contribution, including the new data files that had to be converted from their original formats. Finally, the React app in the /my-app folder was also entirely our contribution.
+
 We have created a web application to test all of the models with different user input. The instructions to run this application are below.
 
 Politifact and Gossipcop datasets: https://github.com/KaiDMML/FakeNewsNet
