@@ -4,7 +4,8 @@ import "./ArticleCheck.css";
 const ArticleCheck = () => {
   const [title, setTitle] = useState("");
   const [results, setResults] = useState(null);
-  
+  const url = "http://localhost:5000/models/prediction/"
+
   // Sample model performance metrics
   const modelPerformance = {
     GossipCop: {
@@ -29,32 +30,21 @@ const ArticleCheck = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    const text = document.getElementById("inputText").value;
     try {
-      // Make parallel requests for each model
-      const requests = ["GossipCop", "PolitiFact", "Combined"].map(async (model) => {
-        const response = await fetch("http://localhost:5000/predict", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ model, title }),
-        });
-        
-        const data = await response.json();
-        return { model, prediction: data.prediction }; // "real" or "fake"
+      const response = await fetch(url + text);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+  
+      const json = await response.json();
+      console.log(json);
+      setResults({
+        GossipCop: json["gossipcop"].toLowerCase(),
+        PolitiFact: json["politifact"].toLowerCase(),
+        Combined: json["combined"].toLowerCase()
       });
 
-      // Wait for all requests to complete
-      const modelResults = await Promise.all(requests);
-      
-      // Convert array to object with model names as keys
-      const resultsObject = modelResults.reduce((acc, result) => {
-        acc[result.model] = result.prediction;
-        return acc;
-      }, {});
-
-      setResults(resultsObject);
     } catch (error) {
       console.error("Error fetching predictions:", error);
       // For demo purposes, we can set mock results
@@ -81,6 +71,7 @@ const ArticleCheck = () => {
                   type="text"
                   className="input"
                   placeholder="Enter article title"
+                  id="inputText"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
