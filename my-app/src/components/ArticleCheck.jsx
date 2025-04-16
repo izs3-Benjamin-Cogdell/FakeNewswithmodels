@@ -9,16 +9,16 @@ const ArticleCheck = () => {
   // Sample model performance metrics
   const modelPerformance = {
     GossipCop: {
-      accuracy: "87.08%",
-      precision: "78.68%",
-      recall: "63.64%",
-      f1Score: "70.36%"
+      accuracy: "89.60%",
+      precision: "84.79%",
+      recall: "69.13%",
+      f1Score: "76.17%"
     },
     PolitiFact: {
-      accuracy: "85.85%",
-      precision: "80.36%",
-      recall: "95.91%",
-      f1Score: "40.26%"
+      accuracy: "92.61%",
+      precision: "86.88%",
+      recall: "96.53%",
+      f1Score: "91.45%"
     },
     Liar:{
       accuracy:  "67.76%",
@@ -27,10 +27,10 @@ const ArticleCheck = () => {
       f1Score:  "61.24%"
     },
     GossipCop_PolitiFact: {
-      accuracy: "84.25%",
-      precision: "69.99%",
-      recall: "63.59%",
-      f1Score: "66.64%"
+      accuracy: "86.49%",
+      precision: "74.30%",
+      recall: "69.63%",
+      f1Score: "71.89%"
     },
     AllThreeCombined:{
       accuracy:  "87.11%",
