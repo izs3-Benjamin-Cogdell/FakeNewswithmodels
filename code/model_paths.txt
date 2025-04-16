@@ -1,0 +1,3 @@
+politifact, results/politifact/politifact_model/
+gossipcop, results/gossipcop/gossipcop_model/
+combined, results/combined/combined_model/
