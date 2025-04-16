@@ -1,75 +1,210 @@
-.container {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Container - Takes full screen and centers content */
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    width: 100%;
     background-color: #f3f4f6;
+    padding: 20px;
   }
   
+  /* Content wrapper for the two columns */
+  .content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    gap: 30px;
+  }
+  
+  /* Left column - Input section */
+  .input-section {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Right column - Performance metrics */
+  .performance-section {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  /* Card */
   .card {
     width: 100%;
-    max-width: 400px;
-    padding: 24px;
+    padding: 30px;
     background-color: white;
     border-radius: 16px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
   
+  /* Results card - separate from input card */
+  .results-card {
+    width: 100%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  /* Title */
   .title {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     text-align: center;
   }
   
+  .subtitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Form */
   .form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
   }
   
   .form-group {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   
   .label {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     font-weight: 500;
+    font-size: 16px;
   }
   
   .select, .input {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
+    font-size: 16px;
   }
   
   .button {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
     background-color: #2563eb;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
   }
   
   .button:hover {
     background-color: #1d4ed8;
   }
   
-  .result {
-    margin-top: 24px;
-    text-align: center;
+  /* Results section */
+  .results-grid {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .result-item {
+    padding: 10px;
+    border-radius: 8px;
     font-weight: bold;
-    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .model-name {
+    font-weight: 500;
+  }
+  
+  .prediction {
+    font-weight: 700;
   }
   
   .real {
+    background-color: rgba(22, 163, 74, 0.1);
     color: #16a34a;
   }
   
   .fake {
+    background-color: rgba(220, 38, 38, 0.1);
     color: #dc2626;
+  }
+  
+  /* Performance metrics section */
+  .performance-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .model-performance {
+    padding: 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+  }
+  
+  .model-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .metrics-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+  }
+  
+  .metrics-table td {
+    padding: 5px;
+  }
+  
+  .metrics-table td:first-child {
+    font-weight: 500;
+    width: 40%;
+  }
+  
+  .metrics-table td:last-child {
+    font-weight: 600;
+    text-align: right;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+    
+    .input-section, .performance-section {
+      width: 100%;
+    }
+    
+    .performance-section {
+      margin-top: 20px;
+    }
   }
