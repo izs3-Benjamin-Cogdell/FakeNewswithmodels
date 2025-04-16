@@ -19,7 +19,7 @@ Contemporary Work Citing our Study: https://www.mdpi.com/2073-431X/13/11/292
 
 ## Additional Data
 
-Before running our application, the two additional trained models not in this repository have to be downloaded.
+Before running our application, the two additional trained models not in this repository have to be downloaded (https://drive.google.com/drive/folders/12szEcqXtG7E1mAY_AG0aXYQVRlLiDhvW?usp=sharing). After downloading these files move both the all_three folder, and liar_dataset folder to the results folder.
 
 ## Using Our Models
 
